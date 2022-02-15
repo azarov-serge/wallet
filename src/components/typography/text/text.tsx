@@ -8,3 +8,5 @@ export const Text: React.FC<TextProps> = (props) => {
 
     return <Styled.Text {...props}>{children}</Styled.Text>;
 };
+
+Text.displayName = 'Text';

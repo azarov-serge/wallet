@@ -8,3 +8,5 @@ export const Paragraph: React.FC<ParagraphProps> = (props) => {
 
     return <Styled.Paragraph {...props}>{children}</Styled.Paragraph>;
 };
+
+Paragraph.displayName = 'Paragraph';
