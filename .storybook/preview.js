@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 /** @jsx jsx */
-import { jsx, ThemeProvider } from '@emotion/react';
+import { jsx, ThemeProvider } from '@emotion/react'; 
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { dark, light, ThemeName } from '@/components/themes';
 

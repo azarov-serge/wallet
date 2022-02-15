@@ -7,13 +7,14 @@ import { WrapperProps } from './types';
 
 const Wrapper = styled.p<WrapperProps>`
     ${(props) => {
-        const theme = isObjectEmpty(props.theme) ? dark : props.theme;
+        const theme =
+            !props.theme || isObjectEmpty(props.theme) ? dark : props.theme;
 
         return `
-          font-weight: bold;
           color: ${theme.palette.error};
-          font-size: ${theme.font.size};
-          line-height: ${theme.font.lineHeight};
+          font-family: ${theme.typography.title3.fontFamily};
+          font-size: ${theme.typography.title3.fontSize};
+          line-height: ${theme.typography.title3.lineHeight};
     `;
     }}
 `;
