@@ -9,21 +9,23 @@ const Button = styled.button<StyledButtonProps>`
         const { kind = 'primary', width = 'auto', height = 'auto' } = props;
 
         const theme = isObjectEmpty(props.theme) ? dark : props.theme;
+        const { palette, typography } = theme;
 
         return `
           display: inline-block;
           width: ${width};
           height: ${height};
           padding: 1rem;
-          font-weight: 700;
           border-radius: 0.3em;
           cursor: pointer;
           line-height: 1;
           text-decoration: none;
           border: none;
-          color: ${theme.palette.caption};
-          background-color: ${theme.palette[kind]};
-          font-size: ${theme.font.size};
+          color: ${palette.caption};
+          background-color: ${palette[kind]};
+          font-family: ${typography.text.fontFamily};
+          font-size: ${typography.text.fontSize};
+          font-weight: 700;
     
           &:hover {
             outline: none;
@@ -34,7 +36,7 @@ const Button = styled.button<StyledButtonProps>`
             opacity: 0.3;
             cursor: not-allowed;
           }
-    `;
+        `;
     }}
 `;
 

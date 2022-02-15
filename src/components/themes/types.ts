@@ -1,23 +1,37 @@
+export type TColor = string;
+
+export interface ITypographyProperty {
+    fontFamily: string;
+    fontSize: string;
+    lineHeight: string;
+    fontWeight: string;
+}
+
+export interface IPalette {
+    primary: TColor;
+    secondary: TColor;
+    background: TColor;
+    selected: TColor;
+    text: TColor;
+    default: TColor;
+    caption: TColor;
+    border: TColor;
+    success: TColor;
+    information: TColor;
+    error: TColor;
+    bars: TColor[];
+}
+
+export interface ITypography {
+    title1: ITypographyProperty;
+    title2: ITypographyProperty;
+    title3: ITypographyProperty;
+    text: ITypographyProperty;
+}
+
 export interface ITheme {
-    [key: string]: Record<string, string | string[]>;
-    palette: {
-        primary: string;
-        secondary: string;
-        background: string;
-        selected: string;
-        text: string;
-        caption: string;
-        border: string;
-        success: string;
-        information: string;
-        error: string;
-        bars: string[];
-    };
-    font: {
-        family: string;
-        size: string;
-        lineHeight: string;
-    };
+    palette: IPalette;
+    typography: ITypography;
 }
 
 export enum ThemeName {

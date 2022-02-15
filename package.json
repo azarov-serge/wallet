@@ -7,8 +7,11 @@
     "start": "webpack-dev-server --mode=development --open --hot",
     "build": "npx webpack --mode=production",
     "test": "npx jest",
+    "test:loki": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "loki:update": "npm run build-storybook && npx loki update --requireReference --reactUri file:./storybook-static",
+    "loki:approve": "npx loki approve"
   },
   "keywords": [],
   "author": "",
@@ -49,7 +52,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "html-webpack-plugin": "5.5.0",
+    "html-webpack-plugin": "4.0.0",
     "jest": "27.4.7",
     "jsdom": "19.0.0",
     "jsdom-global": "3.0.2",

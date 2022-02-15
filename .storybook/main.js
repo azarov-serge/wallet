@@ -9,8 +9,10 @@ module.exports = {
         '@storybook/addon-viewport',
         '@storybook/addon-essentials',
     ],
-    webpackFinal: (config) => {
-        config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    webpackFinal: (config, argv) => {
+        if (argv.configType && argv.configType.toLowerCase() !== 'production') {
+            config.plugins.push(new webpack.HotModuleReplacementPlugin());
+        }
 
         config.module.rules.push({
             test: /\.stories\.tsx$/,
