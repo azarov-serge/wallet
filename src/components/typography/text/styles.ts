@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { dark } from '@/components/themes';
+import { defaultTheme } from '@/components/themes';
 import { TextProps } from './types';
 import { getKindStyle } from '@/components/typography/utils/style';
 
@@ -10,12 +10,16 @@ const Text = styled.span<TextProps>`
             kind = 'text',
             type = 'text',
             hidden = false,
-            theme = dark,
             bold = false,
             italic = false,
             underline = false,
             strikethrough = false,
         } = props;
+
+        const theme = {
+            ...defaultTheme,
+            ...(props.theme || {}),
+        };
 
         const { palette } = theme;
         let decoration = 'normal';
@@ -25,7 +29,7 @@ const Text = styled.span<TextProps>`
         } else if (strikethrough) {
             decoration = 'line-through';
         }
-        
+
         return `
             ${getKindStyle(theme, kind, hidden)}
             font-weight: ${bold ? 'bold' : 'normal'};

@@ -5,7 +5,7 @@ export const palette = {
     selected: 'rgba(85, 85, 85, 1)',
     text: 'rgba(225, 225, 225, 1)',
     default: 'rgba(225, 225, 225, 1)',
-    caption: 'rgba(225, 225, 225, 1)',
+    caption: 'rgba(255, 255, 255, 1)',
     border: 'rgba(77, 77, 77, 1)',
     success: 'rgba(92, 184, 92, 1)',
     information: 'rgba(240, 173, 78, 1)',

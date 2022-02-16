@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
-import { isObjectEmpty } from '@/utils/object';
-import { dark } from '@/components/themes';
+import { defaultTheme } from '@/components/themes';
 import { StyledTitleProps } from './types';
 import { getKindStyle } from '@/components/typography/utils/style';
 import { TTitleKind } from '@/components/typography/types';
@@ -13,12 +12,16 @@ const createTitleStyle = (
     const {
         type = 'text',
         hidden = false,
-        theme = dark,
         bold = false,
         italic = false,
         underline = false,
         strikethrough = false,
     } = props;
+
+    const theme = {
+        ...defaultTheme,
+        ...(props.theme || {}),
+    };
 
     const { palette } = theme;
     let decoration = 'normal';

@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
-import { isObjectEmpty } from '@/utils/object';
-import { dark } from '@/components/themes';
-
+import { defaultTheme } from '@/components/themes';
 import { WrapperProps } from './types';
 
 const Wrapper = styled.p<WrapperProps>`
     ${(props) => {
-        const theme =
-            !props.theme || isObjectEmpty(props.theme) ? dark : props.theme;
+        const theme = {
+            ...defaultTheme,
+            ...(props.theme || {}),
+        };
 
         return `
           color: ${theme.palette.error};

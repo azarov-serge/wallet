@@ -2,8 +2,7 @@ import React from 'react';
 /** @jsx jsx */
 import { jsx, Global, css, useTheme } from '@emotion/react';
 import { SerializedStyles } from '@emotion/utils/types';
-import { ITheme, dark } from '@/components/themes';
-
+import { defaultTheme, ITheme } from '@/components/themes';
 
 const getGlobalStyle = (theme: ITheme): SerializedStyles => css`
     body {
@@ -25,7 +24,10 @@ const getGlobalStyle = (theme: ITheme): SerializedStyles => css`
 `;
 
 export const GlobalStyle: React.FC<Record<any, any>> = (props) => {
-    const { theme = dark } = props;
+    const theme = {
+        ...defaultTheme,
+        ...(props.theme || {}),
+    };
 
     return <Global styles={getGlobalStyle(theme)} />;
 };

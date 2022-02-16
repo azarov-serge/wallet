@@ -1,14 +1,16 @@
 import styled from '@emotion/styled';
 
-import { isObjectEmpty } from '@/utils/object';
-import { dark } from '@/components/themes';
+import { defaultTheme } from '@/components/themes';
 import { StyledButtonProps } from './types';
 
 const Button = styled.button<StyledButtonProps>`
     ${(props) => {
         const { kind = 'primary', width = 'auto', height = 'auto' } = props;
 
-        const theme = isObjectEmpty(props.theme) ? dark : props.theme;
+        const theme = {
+            ...defaultTheme,
+            ...(props.theme || {}),
+        };
         const { palette, typography } = theme;
 
         return `

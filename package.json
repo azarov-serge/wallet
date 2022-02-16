@@ -53,6 +53,7 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "html-webpack-plugin": "4.0.0",
+    "husky": "7.0.4",
     "jest": "27.4.7",
     "jsdom": "19.0.0",
     "jsdom-global": "3.0.2",
@@ -85,6 +86,12 @@
         "target": "chrome.app",
         "preset": "iPhone 7"
       }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test && npm run test:loki"
     }
   }
 }
