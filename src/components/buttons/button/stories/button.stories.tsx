@@ -54,7 +54,7 @@ export const Buttons = () => {
                 <Button
                     key={kind}
                     kind={kind}
-                >{`Button kind is ${kind}`}</Button>
+                >{`Kind of Button is ${kind}`}</Button>
             ))}
         </Styled.Wrapper>
     );
