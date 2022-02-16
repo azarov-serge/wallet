@@ -106,3 +106,5 @@ export const Loader: React.FC<LoaderProp> = (props) => {
         </Styled.Wrapper>
     );
 };
+
+Loader.displayName = 'Loader';
